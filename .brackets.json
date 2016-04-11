@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/GMIT/48889 - MOBILE APPLICATIONS DEVELOPMENT/Project Mobile/memoFANTE_v2/plugins/cordova-plugin-device/src/blackberry10/index.js",
+        "D:/GMIT/48889 - MOBILE APPLICATIONS DEVELOPMENT/Project Mobile/memoFANTE_v2/plugins/cordova-plugin-device/src/browser/DeviceProxy.js",
+        "D:/GMIT/48889 - MOBILE APPLICATIONS DEVELOPMENT/Project Mobile/memoFANTE_v2/plugins/cordova-plugin-device/src/firefoxos/DeviceProxy.js",
+        "D:/GMIT/48889 - MOBILE APPLICATIONS DEVELOPMENT/Project Mobile/memoFANTE_v2/plugins/cordova-plugin-device/src/tizen/DeviceProxy.js"
+    ]
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+Aula 05 - Tempo 7:05
+https://www.youtube.com/watch?v=gCUeQoutNwo&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1XgIra&index=3#t=425.832474
+
+Aula 08 - Tempo - Completo
+https://www.youtube.com/watch?v=oEWeEEl30Wc&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1XgIra&index=8
+
+Aula 09 - Add Item - Tempo - Completo
+https://www.youtube.com/watch?v=x3J68aYhTq8&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1XgIra&index=8#t=1.056
+
+Aula 10 - Alterar - Tempo - Completo
+https://www.youtube.com/watch?v=xG1DYfJT_b0&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1XgIra&index=8#t=1.116
+
+Aula 11 - Salvar - Tempo - Completo
+https://www.youtube.com/watch?v=7sppnPlB7Ro&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1XgIra&index=11
+
+*****************************************************************************
+
+Aula 12 - Compilando - Tempo
+https://www.youtube.com/watch?v=Z1KU3J5ymgI&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1XgIra&index=12
+
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--     -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/TasksModel.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+
+    <ion-pane ng-controller="mainController">
+
+        <!-- Header Bar buttons to add eand delete tasks    -->
+        <ion-header-bar class="bar-dark">
+            <button class="button icon ion-ios-minus-outline" ng-click="onClickRemove()"></button>
+            <!-- <button class="button icon ion-ios-plus-outline" ng-click="onItemAdd()"></button> -->
+            <h1 class="title">MemoFANTE</h1>
+
+            <button class="button icon ion-ios-help-outline" ng-click="info()"></button>
+        </ion-header-bar>
+
+        <!-- Foote Bar buttons to enable and disable active tasks -->
+        <ion-footer-bar class="bar-stable">
+            <div class="row">
+                <div class="button-bar">
+                    <button class="button icon-left ion-arrow-right-c button-small button-dark" ng-click="query = 'Normal'">
+                        Normal
+                    </button>
+                    <button class="button icon-left ion-arrow-up-c button-small button-dark" ng-click="query = 'Priority'">
+                        Priority
+                    </button>
+                    <button class="button icon-left ion-arrow-down-c button-small button-dark" ng-click="query = 'Low'">
+                        Low
+                    </button>
+                </div>
+
+            </div>
+        </ion-footer-bar>
+
+        <div class="bar bar-subheader item-input-inset bar-light">
+            <label class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" ng-model="query" placeholder="Search">
+            </label>
+
+            <button class="button button-small button-outline button-dark" ng-click="query = ''">
+                Cancel
+            </button>
+
+            <h7>  Show finished tasks </h7>
+            <label class="toggle">
+                <input type="checkbox" ng-model="showMarked">
+                <div class="track">
+                    <div class="handle">
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <!-- Star content from here  -->
+        <ion-content class="has-subheader">>
+            <!-- Show and hide delete button for each task -->
+            <ion-list show-delete="removeStatus">
+
+                <!-- take values from variable list and insert by repeat in list
+                    show values here value finish is true "method on HideItem"-->
+                <ion-item ng-repeat="item in list  | filter: query" ng-hide="onHideItem(item)">
+
+                    <button class="button button-small {{item.color}}" ng-click="onMarkTask(item)"><i class="icon ion-checkmark" ng-show="item.finish"></i></button>
+                    {{item.name}}
+                    <h5>Finish    Label: {{item.label}}</h5>
+                    <!-- Buttons remove and Edit for each task -->
+                    <ion-delete-button class="ion-minus-circled" ng-click="onItemRemove(item)"></ion-delete-button>
+                    <ion-option-button class="button-dark" ng-click="onItemEdit(item)">Edit</ion-option-button>
+                    <ion-option-button class="{{item.color}}" ng-click="onItemAtribute(item)">Label</ion-option-button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+
+
+        <!-- Ref.
+        http://pointdeveloper.com/how-to-add-material-design-floating-action-button-to-ionic-framework-apps/
+        also modify the CSS for this button-->
+
+        <!-- Button Starts -->
+        <div class="float-button">
+            <span class="height-fix">
+            <a class="content">
+            <i class="ion-plus-round" ng-click="onItemAdd()"> </i>
+            </a>
+            </span>
+        </div>
+        <!-- Button Ends -->
+    </ion-pane>
+</body>
+</html>
