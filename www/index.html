@@ -59,14 +59,17 @@ https://www.youtube.com/watch?v=Z1KU3J5ymgI&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1Xg
         <ion-footer-bar class="bar-stable">
             <div class="row">
                 <div class="button-bar">
-                    <button class="button icon-left ion-arrow-right-c button-small button-dark" ng-click="query = 'Normal'">
+                    <button class="button button-small button-positive" ng-click="query = 'Normal'">
                         Normal
                     </button>
-                    <button class="button icon-left ion-arrow-up-c button-small button-dark" ng-click="query = 'Priority'">
+                    <button class="button button-small button-assertive" ng-click="query = 'Priority'">
                         Priority
                     </button>
-                    <button class="button icon-left ion-arrow-down-c button-small button-dark" ng-click="query = 'Low'">
+                    <button class="button button-small button-balanced" ng-click="query = 'Low'">
                         Low
+                    </button>
+                    <button class="button button-small button-dark" ng-click="query = ''">
+                        All
                     </button>
                 </div>
 
@@ -79,9 +82,11 @@ https://www.youtube.com/watch?v=Z1KU3J5ymgI&list=PLpP8rO2FXVXTJRTJ2j6rYLKQrQC1Xg
                 <input type="search" ng-model="query" placeholder="Search">
             </label>
 
+            <!--
             <button class="button button-small button-outline button-dark" ng-click="query = ''">
                 Cancel
             </button>
+        -->
 
             <h7>  Show finished tasks </h7>
             <label class="toggle">

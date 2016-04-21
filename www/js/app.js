@@ -97,15 +97,9 @@ app.controller('mainController', function ($scope, $ionicPopup, $ionicActionShee
                 text: '<i class="ion-arrow-up-c icon-button icon-action" ></i>    <span class="tab-action"></span> <i class="text-action">Priority</i>'
             }, {
                 text: '<i class="ion-arrow-down-c icon-button icon-action" ></i>    <span class="tab-action"></span> <i class="text-action">Low</i>'
-            }, {
-                text: 'Blue'
-            }, {
-                text: 'Red'
-            }, {
-                text: 'Green'
             }],
 
-            titleText: 'Task Label and Color',
+            titleText: 'Task Label',
 
             cancel: function () {
                 // add cancel code..
@@ -113,39 +107,25 @@ app.controller('mainController', function ($scope, $ionicPopup, $ionicActionShee
             buttonClicked: function (index) {
                 if (index === 0) {
                     item.label = "Normal";
+                    item.color = "button-positive";
                     tasks.save();
                     return true;
                 }
 
                 if (index === 1) {
                     item.label = "Priority";
+                    item.color = "button-assertive";
                     tasks.save();
                     return true;
                 }
 
                 if (index === 2) {
                     item.label = "Low";
-                    tasks.save();
-                    return true;
-                }
-
-                if (index === 3) {
-                    item.color = "button-positive";
-                    tasks.save();
-                    return true;
-                }
-
-                if (index === 4) {
-                    item.color = "button-assertive";
-                    tasks.save();
-                    return true;
-                }
-
-                if (index === 5) {
                     item.color = "button-balanced";
                     tasks.save();
                     return true;
                 }
+
             }
         });
         //Close all butoons, this case Edit and Label after any change
@@ -157,7 +137,7 @@ app.controller('mainController', function ($scope, $ionicPopup, $ionicActionShee
         //console.log("pass");
         $ionicPopup.alert({
             title: 'Help!',
-            template: 'To edit or change label and color the task, just slide the right task to the left.'
+            template: 'To edit or change label task, just slide the right task to the left.'
         });
     };
 
