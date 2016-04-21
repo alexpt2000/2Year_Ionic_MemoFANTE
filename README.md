@@ -2,6 +2,10 @@
 
 ![Todo Android](android_1.png) ![Todo Android](android_2.png)
 
+![Todo Android](android_3.png) ![Todo Android](android_4.png)
+
+![Todo Android](android_5.png) ![Todo Android](android_6.png)
+
 Hybrid mobile technologies empower a web developer to develop mobile applications which run on multiple mobile platforms. All without learning native platform languages and utilizing existing skills.
 
 Hybrid Mobile technologies have evolved a lot and many different platforms exist.
